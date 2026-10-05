@@ -1,6 +1,6 @@
-import Banner from '@/components/homepage/Banner';
+// import Banner from '@/components/homepage/Banner';
 import { Banner1 } from '@/components/homepage/Banner1';
-import Books from "@/components/homepage/Books";
+import Books from "@/components/homepage/books";
 import React from 'react';
 
 const Home = () => {
