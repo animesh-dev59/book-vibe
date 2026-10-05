@@ -6,7 +6,7 @@ const Banner = () => {
   return (
 
      <section className=''>  
-       <div className=' p-7 rounded-3xl bg-slate-300 container mx-auto grid grid-cols-2 gap-4 items-center '>
+       <div className=' p-7 px-4 rounded-3xl bg-slate-300 container mx-auto grid grid-cols-2 gap-4 items-center '>
         <div> 
          <h2 className='font-bold text-5xl'>Books to freshen up <br /> your bookshelf</h2>
          <button className='btn btn-success mt-3'>View The List</button>
