@@ -1,11 +1,12 @@
 import React from 'react';
-import Logo from  '@/assets/book.ico'
+import Logo from '@/assets/book.ico'
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar = () => {
   return (
-   <nav className='bg-base-100 shadow-sm'>   
-              <div className="navbar  container mx-auto">
+    <div className='bg-base-100 shadow-sm'>  
+      <div className="navbar container mx-auto">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -14,44 +15,26 @@ const Navbar = () => {
       <ul
         tabIndex={-1}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        <li><Link href='./books'>books</Link></li>
+        <li><Link href='/listed-books'>listed - books</Link></li>
+        <li><a>home</a></li>
       </ul>
     </div>
-    <div className="btn btn-ghost text-xl flex gap-2 justify-center">
-        <Image src={Logo} alt='book-img' ></Image>
-       Book Vibe 
-        </div>
-    
+    <a className=" btn-ghost text-xl">Book vite</a> 
+    <Image src={Logo} alt='book-icon'></Image>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2 bg-base-100 w-40 z-1">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
+      <li><Link href='./books'>books</Link></li>
+      <li><Link href='/listed-books'>listed - books</Link></li>
     </ul>
   </div>
-  <div className="navbar-end gap-2">
-    <a className="btn btn-success">Sign in</a>
-    <a className="btn btn-info">Sign up</a>
+  <div className="navbar-end gap-3">
+    <button className="btn btn-info">Button</button>
+    <button className="btn btn-success">Button</button>
   </div>
 </div>
-   </nav>
+    </div>
   );
 };
 
