@@ -8,11 +8,21 @@ interface IBookCardProps {
   book:IBook,
 
 }
-
+/**
+ * intrface IBookCardProps{ 
+ *  book:IBook  
+ * 
+ * interface IBookCardPropls{ 
+ *  book:IBook  , book:IBook , book:IBook , book:IBook , book:IBook , book:IBook ,book:IBook , book:IBook , book:IBook, asdf asdf asdf , 
+ * }
+ *    
+ * }
+ * 
+ */
 const BookCard = ({book}:IBookCardProps) => {
   return (
      <div 
-              
+               
               className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between transition-all duration-300 hover:shadow-md hover:-translate-y-1"
             >
               <div>

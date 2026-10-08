@@ -1,4 +1,5 @@
 import ReadButton from '@/components/bookDetails/ReadButton';
+import WishListPage from '@/components/bookDetails/WishListButton';
 import { IBook } from '@/types/books.type';
 import Image from 'next/image';
 import React from 'react';
@@ -9,6 +10,14 @@ interface IBookDetailsPageProps {
   }>;
 }
 
+// interface IBookDetailsPageProps { 
+//   params: Promise<{ 
+//     id:string;
+//   }>
+// }
+ 
+      
+
 const getBooks = async () => {
   const res = await fetch('http://localhost:3000/booksData.json');
   const data = await res.json();
@@ -17,11 +26,31 @@ const getBooks = async () => {
 
 const BookDetailsPage = async({params}:IBookDetailsPageProps) => {
   const {id} = await params;
-  const booksData = await getBooks();
+  const booksData = await getBooks();  
+  /**
+   * const {id} = await params;
+   * const booksData = await getBooks();
+   */
+
+
   // const book = booksData.find((book:IBook)=> book.bookId === Number(id));
   // const book = booksData.find((book:IBook)=> String(book.bookId) === id);
   // const book = booksData.find((book:IBook)=> String(book.bookId) === id);
-  const book = booksData.find((book:IBook)=> String(book.bookId) == String(id));
+  const book = booksData.find((book:IBook)=> String(book.bookId) === String(id)); 
+
+  const book1 = booksData.find((book:IBook) => String(book.bookId) == String(id));
+
+
+   {/** 
+      const book = booksData.find((book:IBook)=> book.bookId === (id)); 
+
+      const book = booksData.find(book => book.bookId === id) 
+      const book = booksData.find((book:IBook) => book.bookId === Number(id))
+      const book = booksData.find((book:IBook)=> String(book.bookId) === String(id))
+      const book = booksData.find((book:IBook)=> Number(book.bookId) === Number(id));
+    
+    
+    */}
 
   // console.log(book,typeof book.id ,'animesh rudraq paul animehs rudra paul');
   //  console.log(book.id);
@@ -43,6 +72,7 @@ const BookDetailsPage = async({params}:IBookDetailsPageProps) => {
 // </div>
 //     </div>
     <div className='container mx-auto px-4 py-8'>
+       <h1> view detaisl click er pore output ase je file ta </h1>
       <div className="card lg:card-side bg-base-100 shadow-xl border border-gray-100 rounded-2xl p-6 lg:p-12 gap-10 items-center">
         
         {/* Left Side: Book Image with Background Box */}
@@ -112,9 +142,7 @@ const BookDetailsPage = async({params}:IBookDetailsPageProps) => {
           {/* Action Buttons (Read & Wishlist) */}
           <div className="card-actions pt-4 gap-4">
              <ReadButton book={book}/>
-            <button className="btn bg-[#50B1C9] hover:bg-[#3f9bb1] text-white px-7 font-semibold border-none">
-              Wishlist
-            </button>
+            <WishListPage book={book}></WishListPage>
           </div>
 
         </div>
